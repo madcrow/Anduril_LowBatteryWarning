@@ -8,16 +8,6 @@ Migrated to Microchip Studio (formerly called Atmel Studio).
 
 Thoroughly tested on my trusty BLT-LT1.
 
-## Resource costs
-|  | bytes  | % |
-|--|--:|--:|
-| Program memory space | 494 | 6,0 |
-| Data memory space | 7 | 1,3 |
-| EEPROM storage | 0 | 0 |
-
-If your compiled binary exceeds the available flash space, don't panic. Just disable some features which are not important to you.
-E.g. you can gain a lot of space by disabling lightning or candle mode.
-
 ## How does it warn you?
 
 Blinks a simple, periodic pattern by the main emitters, in all states where it makes sense: (basically in all states when the main emitters are ON except for the configuration menus and utility modes).
@@ -100,6 +90,18 @@ Anduril.c has been renamed to main.c. Before building your own binary, make sure
 #define CONFIGFILE cfg-blf-lantern-test.h
 #define ATTINY 85
 ```
+
+## Resource costs
+|  | bytes  | % |
+|--|--:|--:|
+| Program memory space | 494 | 6,0 |
+| Data memory space | 7 | 1,3 |
+| EEPROM storage | 0 | 0 |
+
+The '%' values above are calculated for the ATtiny85.
+
+If your compiled binary exceeds the available flash space, don't panic. Just disable some features which are not important to you.
+E.g. you can gain a lot of space by disabling lightning or candle mode.
 
 ## Known limitations
 
