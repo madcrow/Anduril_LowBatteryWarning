@@ -1,8 +1,11 @@
 # Anduril + low-battery-warning
 
+A variant of the popular Anduril flashlight firmware, with added low-battery-notification feature via the main emitters.
 
 Based on Rev. 642 (2021-12-13) of the original.
+
 Migrated to Microchip Studio (formerly called Atmel Studio).
+
 Thoroughly tested on my trusty BLT-LT1.
 
 ## Resource costs
@@ -15,7 +18,7 @@ Thoroughly tested on my trusty BLT-LT1.
 If your compiled binary exceeds the available flash space, don't panic. Just disable some features which are not important to you.
 E.g. you can gain a lot of space by disabling lightning or candle mode.
 
-## Notification indicator
+## How does it warn you?
 
 Blinks a simple, periodic pattern by the main emitters, in all states where it makes sense: (basically in all states when the main emitters are ON except for the configuration menus and utility modes).
 In strobe mode, where a blink pattern might be difficult to notice as the emitters are blinking anyway, it prepends and appends a couple of seconds of constant brightness level to the pattern.
@@ -34,7 +37,7 @@ The blink pattern is configurable (see below).
     	(
     			Main emitters are already on (in any mode except utility and config menus)
     		AND
-    			Voltage has just dropped by U >= 0.1V since last notification (*)
+    			Voltage has just dropped by U >= 0.1V since the last measurement (*)
     	)
     )
 
@@ -101,6 +104,7 @@ Anduril.c has been renamed to main.c. Before building your own binary, make sure
 ## Known limitations:
 
 **(1)**
+
 When returning from ramp configuration to steady ON state, the previous brightness level is restored "as-is" now, instead of it being harmonized with the newly configured ramp "resolution".
 
 (E.g. Current level = 100. -> Enter ramp config menu -> Set up new ceiling = 80 -> Exit config menu -> prev. level of 100 restored, even though it became out of range (as 100 > 80).
@@ -109,6 +113,7 @@ It will NOT be limited to 80 until clicking OFF then back ON, or ramping in eith
 This was a conscious compromise (in favor of code size), which I doubt most users will ever notice.
 
 **(2)**
+
 **EDIT: Fixed.** It just kept bugging me (excuse the pun), so I eventually just went ahead and corrected the existing underclocking code. You can have the best of both worlds now :)
 
 ~~Enabling the low battery warning mode automatically disables USE_DYNAMIC_UNDERCLOCKING.
@@ -126,10 +131,11 @@ where the current draw of the main emitters is comparable to that of the MCU (3-
 which could potentially be reduced to  cca. 1mA.~~
 
 **(3)**
+
 Ramping safety timeouts are rendered ineffective if notification is received during manual ramping.
 OK... bear with me on this one:
 
-          When the warning kicks in
+          If the warning kicks in
     WHILE you are ramping up / down (by 1H / 2H),
     AND   you let the notification run its course (i.e don't abort it by releasing the button),
     AND   you continue ramping till the ceiling,
@@ -156,6 +162,4 @@ Once this underlying bug is squashed, there won't be any timing anomalies any mo
 Should be an easy fix.
 The reason I did not do it myself:
 - I did my best to alter the existing functions as little as possible.
-- And (unlike the underclocking logic) this one did not bother me enough to put any effort into it:
--- as it does not have a severe impact
--- and the likelihood of actually ever experiencing it is pretty slim.
+- And (unlike the underclocking logic) this one did not bother me enough to put any effort into it as it does not have a severe impact and the likelihood of actually ever experiencing it is pretty slim.
