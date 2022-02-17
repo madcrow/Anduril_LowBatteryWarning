@@ -45,7 +45,7 @@ The blink pattern is configurable (see below).
 However, your mileage may vary (different equipment -> different battery internal resistance and different current draw). In case you run into out-of place low-battery notifications, try to add some extra filtering in the ADC hander code.
 For my HW, the existing post-processing logic was adequate.
 
-## Configuration options:
+## Configuration options
 
 ```c
 // enable the low battery warning feature
@@ -101,7 +101,7 @@ Anduril.c has been renamed to main.c. Before building your own binary, make sure
 #define ATTINY 85
 ```
 
-## Known limitations:
+## Known limitations
 
 **(1)**
 
