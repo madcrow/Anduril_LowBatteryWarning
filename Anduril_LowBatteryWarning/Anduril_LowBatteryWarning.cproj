@@ -1,0 +1,660 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>7.0</ProjectVersion>
+    <ToolchainName>com.Atmel.AVRGCC8.C</ToolchainName>
+    <ProjectGuid>dce6c7e3-ee26-4d79-826b-08594b9ad897</ProjectGuid>
+    <avrdevice>ATtiny85</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>Executable</OutputType>
+    <Language>C</Language>
+    <OutputFileName>$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AssemblyName>Anduril_LowBatteryWarning</AssemblyName>
+    <Name>Anduril_LowBatteryWarning</Name>
+    <RootNamespace>Anduril_LowBatteryWarning</RootNamespace>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <CacheFlash>true</CacheFlash>
+    <ProgFlashFromRam>true</ProgFlashFromRam>
+    <RamSnippetAddress>0x20000000</RamSnippetAddress>
+    <UncachedRange />
+    <preserveEEPROM>true</preserveEEPROM>
+    <OverrideVtorValue>exception_table</OverrideVtorValue>
+    <BootSegment>2</BootSegment>
+    <ResetRule>0</ResetRule>
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <EraseKey />
+    <AsfFrameworkConfig>
+      <framework-data xmlns="">
+        <options />
+        <configurations />
+        <files />
+        <documentation help="" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.45.0" />
+        </dependencies>
+      </framework-data>
+    </AsfFrameworkConfig>
+    <avrtool>com.atmel.avrdbg.tool.simulator</avrtool>
+    <avrtoolserialnumber />
+    <avrdeviceexpectedsignature>0x1E930B</avrdeviceexpectedsignature>
+    <com_atmel_avrdbg_tool_simulator>
+      <ToolOptions xmlns="">
+        <InterfaceProperties>
+        </InterfaceProperties>
+      </ToolOptions>
+      <ToolType xmlns="">com.atmel.avrdbg.tool.simulator</ToolType>
+      <ToolNumber xmlns="">
+      </ToolNumber>
+      <ToolName xmlns="">Simulator</ToolName>
+    </com_atmel_avrdbg_tool_simulator>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <AvrGcc>
+        <avrgcc.common.Device>-mmcu=attiny85 -B "%24(PackRepoDir)\Atmel\ATtiny_DFP\1.3.229\gcc\dev\attiny85"</avrgcc.common.Device>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+        <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+        <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>NDEBUG</Value>
+          </ListValues>
+        </avrgcc.compiler.symbols.DefSymbols>
+        <avrgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\Atmel\ATtiny_DFP\1.3.229\include</Value>
+          </ListValues>
+        </avrgcc.compiler.directories.IncludePaths>
+        <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.OtherFlags>-fwhole-program</avrgcc.compiler.optimization.OtherFlags>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.compiler.miscellaneous.OtherFlags>-std=gnu99 -fgnu89-inline</avrgcc.compiler.miscellaneous.OtherFlags>
+        <avrgcc.linker.libraries.Libraries>
+          <ListValues>
+            <Value>libm</Value>
+          </ListValues>
+        </avrgcc.linker.libraries.Libraries>
+        <avrgcc.linker.miscellaneous.LinkerFlags>-mrelax -fgnu89-inline</avrgcc.linker.miscellaneous.LinkerFlags>
+        <avrgcc.assembler.general.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\Atmel\ATtiny_DFP\1.3.229\include</Value>
+          </ListValues>
+        </avrgcc.assembler.general.IncludePaths>
+      </AvrGcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <AvrGcc>
+        <avrgcc.common.Device>-mmcu=attiny85 -B "%24(PackRepoDir)\Atmel\ATtiny_DFP\1.3.229\gcc\dev\attiny85"</avrgcc.common.Device>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+        <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+        <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>DEBUG</Value>
+          </ListValues>
+        </avrgcc.compiler.symbols.DefSymbols>
+        <avrgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\Atmel\ATtiny_DFP\1.3.229\include</Value>
+          </ListValues>
+        </avrgcc.compiler.directories.IncludePaths>
+        <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.linker.libraries.Libraries>
+          <ListValues>
+            <Value>libm</Value>
+          </ListValues>
+        </avrgcc.linker.libraries.Libraries>
+        <avrgcc.assembler.general.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\Atmel\ATtiny_DFP\1.3.229\include</Value>
+          </ListValues>
+        </avrgcc.assembler.general.IncludePaths>
+        <avrgcc.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcc.assembler.debugging.DebugLevel>
+      </AvrGcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="aux-leds.c">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="aux-leds.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="battcheck-mode-fsm.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="battcheck-mode.c">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="battcheck-mode.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="beacon-mode.c">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="beacon-mode.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="candle-mode.c">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="candle-mode.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-blf-gt-mini.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-blf-gt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-blf-lantern-t1616.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-blf-lantern-test.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-blf-lantern.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-blf-q8-t1616.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-blf-q8.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-emisar-d1.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-emisar-d18-219.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-emisar-d18.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-emisar-d1s.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-emisar-d1v2.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-emisar-d4-219c.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-emisar-d4.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-emisar-d4s-219c.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-emisar-d4s.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-emisar-d4sv2-219.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-emisar-d4sv2-tintramp-fet.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-emisar-d4sv2-tintramp.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-emisar-d4sv2.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-emisar-d4v2-219.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-emisar-d4v2-nofet.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-emisar-d4v2.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-ff-e01.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-ff-pl47-219.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-ff-pl47.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-ff-pl47g2.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-ff-rot66-219.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-ff-rot66.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-ff-rot66g2.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-fw3a-219.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-fw3a-nofet.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-fw3a.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-fw3x-lume1.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-gchart-fet1-t1616.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-mateminco-mf01-mini.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-mateminco-mf01s.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-noctigon-dm11-12v.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-noctigon-dm11-nofet.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-noctigon-dm11.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-noctigon-k1-12v.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-noctigon-k1-sbt90.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-noctigon-k1.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-noctigon-k9.3-219.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-noctigon-k9.3-nofet.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-noctigon-k9.3-tintramp-219.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-noctigon-k9.3-tintramp-fet.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-noctigon-k9.3-tintramp-nofet.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="cfg-noctigon-k9.3.c">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="cfg-noctigon-k9.3.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-noctigon-kr4-219.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-noctigon-kr4-219b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-noctigon-kr4-nofet.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-noctigon-kr4-tintramp.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-noctigon-kr4.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-sofirn-IF25A-grandma-edition.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-sofirn-sp10s.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-sofirn-sp36-t1616.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cfg-sofirn-sp36.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="config-default.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="config-mode.c">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="config-mode.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="factory-reset-fsm.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="factory-reset.c">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="factory-reset.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="ff-strobe-modes.c">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="ff-strobe-modes.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="fsm-adc.c">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="fsm-adc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="fsm-eeprom.c">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="fsm-eeprom.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="fsm-events.c">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="fsm-events.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="fsm-main.c">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="fsm-main.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="fsm-misc.c">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="fsm-misc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="fsm-pcint.c">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="fsm-pcint.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="fsm-ramping.c">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="fsm-ramping.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="fsm-random.c">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="fsm-random.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="fsm-standby.c">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="fsm-standby.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="fsm-states.c">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="fsm-states.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="fsm-wdt.c">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="fsm-wdt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hank-cfg.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hwdef-BLF_GT.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hwdef-BLF_GT_Mini.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hwdef-BLF_LT1-t1616.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hwdef-BLF_LT1.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hwdef-BLF_Q8-T1616.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hwdef-BLF_Q8.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hwdef-Emisar_D1.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hwdef-Emisar_D18.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hwdef-Emisar_D1S.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hwdef-Emisar_D4.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hwdef-Emisar_D4S.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hwdef-Emisar_D4Sv2-tintramp.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hwdef-Emisar_D4Sv2.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hwdef-Emisar_D4v2.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hwdef-Ferrero_Rocher.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hwdef-FET_7135.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hwdef-FF_PL47.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hwdef-FF_ROT66.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hwdef-FW3A.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hwdef-fw3x-lume1.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hwdef-gchart-fet1-t1616.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hwdef-Mateminco_MF01-Mini.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hwdef-Mateminco_MF01S.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hwdef-nanjg.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hwdef-Noctigon_DM11-12V.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hwdef-Noctigon_DM11.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hwdef-Noctigon_K1-12V.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hwdef-Noctigon_K1-SBT90.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hwdef-Noctigon_K1.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hwdef-Noctigon_K9.3.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hwdef-Noctigon_KR4-tintramp.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hwdef-Noctigon_KR4.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hwdef-Sofirn_SP10S.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hwdef-TK_Saber.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hwdef-Tripledown.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="load-save-config-fsm.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="load-save-config.c">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="load-save-config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lockout-mode-fsm.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="lockout-mode.c">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="lockout-mode.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="low-batt-warning-mode.c">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="low-batt-warning-mode.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="main.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="misc.c">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="misc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="momentary-mode.c">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="momentary-mode.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="off-mode.c">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="off-mode.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ramp-mode-fsm.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="ramp-mode.c">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="ramp-mode.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="sos-mode.c">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="sos-mode.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="spaghetti-monster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="strobe-modes-fsm.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="strobe-modes.c">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="strobe-modes.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="sunset-timer.c">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="sunset-timer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="tempcheck-mode.c">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="tempcheck-mode.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="tint-ramping.c">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="tint-ramping.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tk-attiny.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tk-calibration.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tk-delay.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tk-random.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tk-voltage.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tk.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="version-check-mode.c">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="version-check-mode.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="version.h">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>
